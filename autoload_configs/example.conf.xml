@@ -1,0 +1,6 @@
+<configuration name="example.conf" description="mod_example">
+    <events>
+        <param name="event" value="HEARTBEAT"/>
+        <param name="event" value="CHANNEL_CREATE"/>
+    </events>
+</configuration>
