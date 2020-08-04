@@ -6,8 +6,11 @@ globals_t globals;
 SWITCH_MODULE_LOAD_FUNCTION(mod_example_load);
 SWITCH_MODULE_SHUTDOWN_FUNCTION(mod_example_shutdown);
 
+//#define SWITCH_MODULE_DEFINITION_EX(name, load, shutdown, runtime, flags)
+//static const char modname[] = #name ;
 SWITCH_MODULE_DEFINITION(mod_example, mod_example_load, mod_example_shutdown, NULL);
 
+//switch_status_t mod_example_load (switch_loadable_module_interface_t **module_interface, switch_memory_pool_t *pool);
 SWITCH_MODULE_LOAD_FUNCTION(mod_example_load) {
     memset(&globals, 0, sizeof(globals));
     globals.pool = pool;
@@ -22,7 +25,7 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_example_load) {
     /* create an api interface for the module command line interface (cli) */
     add_cli_api(module_interface, &globals.api_interface);
 
-	load_config(CONFIG_FILE);
+    load_config(CONFIG_FILE);
 
     return SWITCH_STATUS_SUCCESS;
 }
