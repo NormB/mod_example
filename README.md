@@ -1,3 +1,5 @@
+TESTING
+
 # mod_example
 
 mod_example was presented at ClueCon 2020 to demonstrate techniques related to developing a FreeSWITCH event handling module.
